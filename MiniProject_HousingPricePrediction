@@ -1,0 +1,69 @@
+# 🏡 Housing Price Prediction – Boston Housing Dataset
+
+This is a class project where I practiced a complete end-to-end machine learning workflow using the classic Boston Housing dataset. The goal was to predict median house prices (`MEDV`) based on various housing and demographic features.
+
+---
+
+## 📌 Project Highlights
+
+- **Data Preprocessing**
+  - Loaded raw dataset with no column headers and manually assigned proper column names
+  - Handled missing values by imputing median values for numeric columns
+  - Performed initial data checks (`df.info()`, `df.head()`)
+
+- **Exploratory Data Analysis (EDA)**
+  - Visualized distribution of the target variable (`MEDV`)
+  - Analyzed feature relationships (e.g., `RM`, `LSTAT` vs. `MEDV`)
+  - Generated a **correlation heatmap** to identify important predictors
+
+- **Modeling**
+  - Trained two baseline models: **Linear Regression** and **Decision Tree**
+  - Evaluated performance using **Mean Absolute Error (MAE)** and **Root Mean Squared Error (RMSE)**
+  - Found that the Decision Tree outperformed Linear Regression in this case
+
+- **Hyperparameter Tuning**
+  - Used `GridSearchCV` to optimize the Decision Tree model
+  - Performed 5-fold cross-validation to select the best `max_depth` and `min_samples_split`
+  - Compared baseline and optimized models visually and quantitatively
+
+---
+
+## 📈 Evaluation Results
+
+| Model                | MAE   | RMSE  |
+|---------------------|-------|-------|
+| Linear Regression    | 3.19  | 4.93  |
+| Baseline Decision Tree | 2.39  | 3.23  |
+| Optimized Decision Tree | **2.31**  | **2.92**  |
+
+---
+
+## 📊 Visualizations
+
+- Distribution of `MEDV`
+- Scatter plots: `RM` vs. `MEDV`, `LSTAT` vs. `MEDV`
+- Correlation heatmap of all features
+- Actual vs. Predicted plots for baseline and optimized models
+- Residual distribution plots
+- Zoomed-in performance on high-price range (MEDV > 30)
+
+---
+
+## 📂 Technologies Used
+
+- Python
+- pandas, numpy
+- matplotlib, seaborn
+- scikit-learn
+
+---
+
+## 📚 About
+
+This is a **learning project** as part of my coursework in AI and data science. It helped me understand the full ML workflow: from raw data preprocessing to model training, tuning, and interpretation.
+
+> _“The deeper your domain understanding, the more powerful AI becomes.”_
+
+---
+
+
