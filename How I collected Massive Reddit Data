@@ -1,0 +1,54 @@
+# How I Collected Massive Reddit Data: Pitfalls and Solutions  
+*This is my first official research post, following up on yesterday's update.*
+
+---
+
+## 1. Research Background: Focusing on a Canadian Immigration Policy
+
+This project aims to examine discussions on Reddit before and after the release of a key Canadian immigration policy. I've defined two periods:
+
+- **Policy "Before"**: Around 6 months prior to the announcement.
+- **Policy "After"**: Around 6 months after the policy was released or took effect.
+
+By comparing post volume, topics, and even sentiment across these periods, I hope to observe any noticeable changes in community engagement. The specific policy I chose to focus on was announced in **May 2023**. It relates to **Express Entry** or another major immigration reform by IRCC. I believe this event may have triggered shifts in discussions or focus areas on Reddit — although that remains a hypothesis.
+
+---
+
+## 2. Where Did I Get the Data?
+
+Initially, I turned to Reddit's official API, since I had used it before for resignation-related research. However, I quickly encountered several issues:
+
+### (1) Historical Limitations of Reddit API  
+Reddit’s API only returns a few hundred to a few thousand posts, and doesn’t allow full access to older content (e.g. 6–12 months back). That made it unsuitable for my policy analysis.
+
+### (2) Keyword Search Challenges  
+Relying solely on keywords like "immigration" or "visa" is risky:
+- It may miss relevant posts with alternative phrasing, misspellings, or abbreviations.
+- It could include lots of irrelevant posts (e.g. discussing visas unrelated to Canada).
+This approach was not scalable for topic modeling or unsupervised learning.
+
+---
+
+## 3. Why Not Use Pushshift?
+
+Pushshift was once the go-to solution for historical Reddit data. However, it now faces several issues:
+- **Outdated data**: Some months are not fully updated.
+- **Restricted access**: Some APIs now require tokens or permissions.
+- **Unreliability**: It didn’t align with my need to retrieve complete data over exact timeframes.
+
+---
+
+## 4. Discovery: Monthly `.zst` Files Changed Everything
+
+On the subreddit [r/pushshift](https://www.reddit.com/r/pushshift), I came across a post titled *"Dump files from 2005-06 to 2024-12"* by user `Watchful1`. It included a torrent link containing every Reddit submission from June 2005 to December 2024.
+
+### Why This Was a Game-Changer:
+1. **Bypasses Reddit API’s limits** — Access to full historical data.
+2. **Selective downloading** — I only needed a few months, not the full archive.
+3. **Solves keyword/API limitations** — I could filter precisely by time and subreddit.
+
+---
+
+## 5. Target Subreddits
+
+To study immigration
