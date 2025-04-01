@@ -1,4 +1,4 @@
-# AIDI-1003 Course Project: Part 1 – Collecting Reddit Data on Canadian Immigration
+# Course Project: Part 1 – Collecting Reddit Data on Canadian Immigration
 
 ## 1. Research Motivation and Background
 I am conducting a study related to Canadian immigration as part of this semester’s final project. The core idea is: on Reddit, do users’ discussions about immigration policy show any significant differences before and after a key policy change? I consider the end of May 2023 as a watershed point and divide the timeline into:
